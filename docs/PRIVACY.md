@@ -56,7 +56,7 @@ We keep account and route data while your account is active or as needed to prov
 
 ## Deletion Requests
 
-You may request deletion of your account and associated route data by emailing us at [CONTACT_EMAIL_PLACEHOLDER]. We may need to verify your identity before completing a deletion request. Some purchase records may remain with Apple or RevenueCat where required for billing, fraud prevention, legal compliance, or accounting.
+You may request deletion of your account and associated route data by emailing us at jordan8aaguirre@yahoo.com. We may need to verify your identity before completing a deletion request. Some purchase records may remain with Apple or RevenueCat where required for billing, fraud prevention, legal compliance, or accounting.
 
 ## Children
 
@@ -72,4 +72,4 @@ You can choose whether to grant camera, microphone, speech recognition, photo li
 
 ## Contact
 
-For privacy questions or deletion requests, contact us at [CONTACT_EMAIL_PLACEHOLDER].
+For privacy questions or deletion requests, contact us at jordan8aaguirre@yahoo.com.
