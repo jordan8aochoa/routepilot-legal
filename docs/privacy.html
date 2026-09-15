@@ -73,7 +73,7 @@
   <main>
     <article>
       <h1>Carrier Route Pilot Privacy Policy</h1>
-      <p class="updated">Last updated: May 14, 2026</p>
+      <p class="updated">Last updated: September 15, 2026</p>
       <p>Carrier Route Pilot helps USPS mail carriers organize route information, scan parcel labels, search addresses, and manage delivery notes. This policy explains what information the app collects, how it is used, and the choices you have.</p>
 
       <h2>Information We Collect</h2>
@@ -81,7 +81,8 @@
       <p>When you create or sign in to an account, Carrier Route Pilot uses Supabase Auth to process your email address and password authentication. Passwords are handled by Supabase Auth and are not visible to us.</p>
 
       <h3>Route and Stop Data</h3>
-      <p>The app stores route names, stops, addresses, notes, route gallery information, curbside route segments, and related route-management data in Supabase Postgres. This data is used to provide route lookup, route library access, public gallery features, multi-stop navigation, and persistent stop notes.</p>
+      <p>The app stores route names, stops, addresses, notes, route gallery information, curbside and walking route segments, parking points, and related route-management data in Supabase Postgres. This data is used to provide route lookup, route library access, public gallery features, multi-stop navigation, and persistent stop notes.</p>
+      <p>When you publish a route to the Gallery, its route name, delivery addresses, and map sections become searchable and copyable by other signed-in users. Route notes and stop notes are excluded from Gallery copies. You can unpublish your route at any time. Users can report a shared route or block its creator; we store those safety actions to hide content and review reports.</p>
 
       <h3>Camera and OCR</h3>
       <p>Carrier Route Pilot uses your camera to scan parcel labels and identify matching stops. Camera frames and scanned images are processed on your device for OCR and matching. Camera frames are not uploaded to our servers for OCR processing.</p>
@@ -96,7 +97,14 @@
       <p>Carrier Route Pilot uses RevenueCat to manage subscriptions, purchases, receipts, trials, and entitlement status. RevenueCat may receive purchase-related identifiers and receipt information needed to validate access to premium features.</p>
 
       <h3>Optional AI Assistance</h3>
-      <p>Carrier Route Pilot may offer optional AI-assisted route creation or text enhancement using Anthropic Claude API. When used, only text needed for the requested route-assistance task is sent. Camera images, camera frames, audio recordings, passwords, and payment information are not sent to Anthropic. The feature is designed not to send personally sensitive account information.</p>
+      <p>Carrier Route Pilot may offer optional AI-assisted route creation, image import, or text enhancement using the Anthropic Claude API. When you choose an AI text feature, the text needed for that request is sent to Anthropic. When you choose AI image import, the specific route-sheet image you selected is sent to Anthropic to extract route information. Live parcel-scanner camera frames, audio recordings, passwords, and payment information are not sent to Anthropic.</p>
+
+      <h3>Mapping and Address Detection</h3>
+      <p>When you use route maps, geocoding, route ribbons, or address detection, address text and map coordinates needed for the request are processed through our Supabase function and may be sent to Google Maps Platform or OpenStreetMap community services. We cache limited map responses and keep usage records to improve reliability and prevent misuse.</p>
+
+      <h3>Quick Route</h3>
+      <p>When you choose Navigate in RoutePilot, Google Navigation SDK processes your live location, destination coordinates, and navigation diagnostics to provide spoken directions, traffic updates, and rerouting. Location updates and audio may continue while the app is in the background or the screen is locked during an active navigation session. Ending navigation stops that session. Arrival does not mark a stop delivered; you choose Delivered or Skip. Google’s navigation terms are shown before first use.</p>
+      <p>Quick Route reads selected or captured address photos on your device; these photos are not uploaded for OCR. When you add typed, pasted, or extracted addresses, Quick Route automatically sends the address text and your saved delivery area through Supabase to Google Geocoding, with an OpenStreetMap Nominatim fallback, to suggest local matches. Clear local matches are accepted automatically; uncertain or distant suggestions require review. When you optimize a trip, confirmed destination, starting-point, and optional finish coordinates are sent through Supabase to our routing service running VROOM with OSRM or Valhalla and OpenStreetMap road data. The routing service processes these coordinates to choose a stop order and calculate a driving path; it does not save destination requests. Google continues to provide the embedded map and optional spoken navigation. Optimization estimates do not include live traffic. Quick Route trips and progress are saved on this device separately for each signed-in account and do not sync between devices. Traffic estimates and route geometry are not saved with the trip. Coordinates expire after 30 days and are removed from saved trips when that account next becomes active in the app; affected locations are matched again, with uncertain results requiring review. You can delete a Quick Route trip from the app. Deleting your account also removes its saved Quick Route trips from this device; if local cleanup fails, the app offers a cleanup retry.</p>
 
       <h2>How We Use Information</h2>
       <ul>
@@ -105,18 +113,18 @@
         <li>Match scanned parcel labels to route stops</li>
         <li>Support voice address lookup</li>
         <li>Provide premium subscription access</li>
-        <li>Improve reliability, prevent misuse, and support customer requests</li>
+        <li>Improve reliability, review Gallery reports, prevent misuse, and support customer requests</li>
         <li>Provide optional AI assistance when you choose to use it</li>
       </ul>
 
       <h2>Sharing</h2>
-      <p>We do not sell your personal information. We share information only with service providers needed to operate the app, including Supabase for authentication and database services, RevenueCat for subscription management, Apple for speech recognition and App Store purchases, and Anthropic for optional text-only AI assistance when you choose to use that feature.</p>
+      <p>We do not sell your personal information. We share information only with service providers needed to operate the app, including Supabase for authentication, database, and server functions; RevenueCat for subscription management; Apple for speech recognition and App Store purchases; Anthropic for optional AI text or selected-image assistance; Google Maps Platform for geocoding and route calculation; and OpenStreetMap community services for optional mapped-address discovery.</p>
 
       <h2>Data Retention</h2>
-      <p>We keep account and route data while your account is active or as needed to provide the app. Subscription and receipt data may be retained by RevenueCat and Apple according to their policies. We may retain limited records when required for security, legal, tax, or operational reasons.</p>
+      <p>We keep account and route data while your account is active or as needed to provide the app. Cached map responses and limited service-usage records may be retained for reliability and abuse prevention. Gallery reports may be retained as needed to review safety issues. Subscription and receipt data may be retained by RevenueCat and Apple according to their policies. We may retain limited records when required for security, legal, tax, or operational reasons.</p>
 
-      <h2>Deletion Requests</h2>
-      <p>You may request deletion of your account and associated route data by emailing us at <a href="mailto:jordan8aaguirre@yahoo.com">jordan8aaguirre@yahoo.com</a>. We may need to verify your identity before completing a deletion request. Some purchase records may remain with Apple or RevenueCat where required for billing, fraud prevention, legal compliance, or accounting.</p>
+      <h2>Account Deletion</h2>
+      <p>You can delete your account in the app from Profile &gt; Account &gt; Delete Account. This deletes your RoutePilot account and associated route data from Supabase. Some purchase records may remain with Apple or RevenueCat where required for billing, fraud prevention, legal compliance, or accounting. You may also contact us at <a href="mailto:jordan8aaguirre@yahoo.com">jordan8aaguirre@yahoo.com</a> with privacy questions.</p>
 
       <h2>Children</h2>
       <p>Carrier Route Pilot is intended for users age 13 and older. We do not knowingly collect personal information from children under 13. If you believe a child under 13 has provided personal information, contact us so we can take appropriate action.</p>
